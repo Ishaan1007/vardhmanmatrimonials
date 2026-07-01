@@ -39,7 +39,7 @@ export function createRecaptchaVerifier(auth: Auth, containerId = "recaptcha-con
   if (window.recaptchaVerifier) {
     try {
       window.recaptchaVerifier.clear();
-    } catch (e) {
+    } catch {
       // ignore cleanup errors
     }
     window.recaptchaVerifier = null;

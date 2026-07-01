@@ -144,7 +144,6 @@ export default function EngagementFramePlayer({
   const rafRef = useRef<number | null>(null);
   const lastFrameTimeRef = useRef<number>(0);
   const frameIndexRef = useRef<number>(0);
-  const previousFrameIndexRef = useRef<number>(0);
   const loopCountRef = useRef<number>(0);
   const renderSizeRef = useRef({ width: CANVAS_WIDTH, height: CANVAS_HEIGHT });
   const onLoadCompleteRef = useRef(onLoadComplete);
@@ -336,7 +335,7 @@ export default function EngagementFramePlayer({
       rafRef.current = null;
       lastFrameTimeRef.current = 0;
     };
-  }, [durationSeconds, fit, fps, frameCount, isLoaded]);
+  }, [durationSeconds, fit, fps, frameCount, isLoaded, paused]);
 
   return (
     <div ref={containerRef} className={className} style={{ width: "100%", height: "100%" }} suppressHydrationWarning>

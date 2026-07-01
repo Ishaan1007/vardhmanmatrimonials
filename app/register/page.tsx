@@ -40,7 +40,7 @@ declare global {
     Razorpay?: new (options: RazorpayOptions) => {
       open: () => void;
     };
-    recaptchaVerifier?: any;
+    recaptchaVerifier?: unknown;
   }
 }
 
@@ -640,7 +640,7 @@ export default function RegisterPage() {
             {otpError && <p className={styles.fieldError}>{otpError}</p>}
             {otpVerified ? (
               <p className={styles.inputNote} style={{ color: "#24632d" }}>
-                OTP verified successfully. Click "Verify & Continue" to proceed.
+                OTP verified successfully. Click &quot;Verify & Continue&quot; to proceed.
               </p>
             ) : (
               <p className={styles.inputNote}>
