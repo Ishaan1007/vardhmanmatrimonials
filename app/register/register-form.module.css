@@ -1,0 +1,518 @@
+.pageShell {
+  min-height: 100vh;
+  padding: clamp(32px, 5vw, 64px) clamp(20px, 4vw, 56px);
+  background: #f4f4f4;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2c2c2c;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.backLink::before {
+  content: "←";
+  font-size: 1rem;
+}
+
+.headerPanel {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto 32px;
+}
+
+.pageTitle {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  color: #212121;
+}
+
+.pageSubtitle {
+  max-width: 680px;
+  margin: 0;
+  color: #4a4a4a;
+  font-size: clamp(0.98rem, 1.1vw, 1.1rem);
+  line-height: 1.8;
+}
+
+.wizardShell {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.progressBar {
+  position: relative;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(122, 31, 43, 0.12);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #d4af37, #7a1f2b 75%);
+  border-radius: inherit;
+  transition: width 320ms ease;
+}
+
+.stepLabels {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.stepItem {
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: #f6f6f6;
+  border: 1px solid rgba(80, 80, 80, 0.12);
+  color: #333333;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.stepItem.active {
+  background: #ffffff;
+  border-color: rgba(80, 80, 80, 0.18);
+  color: #111111;
+}
+
+.stepItem span {
+  display: block;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.wizardCard {
+  display: grid;
+  gap: 24px;
+  padding: clamp(24px, 2vw, 34px);
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(60, 60, 60, 0.12);
+  box-shadow: 0 20px 40px rgba(60, 60, 60, 0.08);
+}
+
+.stepHeader {
+  display: grid;
+  gap: 10px;
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: clamp(1.45rem, 2vw, 1.95rem);
+  font-weight: 800;
+  color: #241916;
+}
+
+.stepDescription {
+  margin: 0;
+  color: #5b4a4b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.fieldGrid {
+  display: grid;
+  gap: 18px;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 10px;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fieldLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #3c2628;
+}
+
+.optionalLabel {
+  color: #8b7a7b;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.inputField,
+.selectField,
+.textareaField {
+  width: 100%;
+  min-height: 54px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(80, 90, 100, 0.16);
+  background: #ffffff;
+  color: #222222;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.otpRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.textareaField {
+  min-height: 110px;
+  padding: 16px 20px;
+  resize: vertical;
+}
+
+.inputField:focus,
+.selectField:focus,
+.textareaField:focus {
+  border-color: rgba(47, 79, 111, 0.28);
+  box-shadow: 0 0 0 4px rgba(47, 79, 111, 0.08);
+}
+
+.inputGroup {
+  display: grid;
+  gap: 12px;
+}
+
+.inputNote {
+  margin: 0;
+  color: #7e6a6c;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.fieldError {
+  color: #a02a2e;
+  font-size: 0.88rem;
+  margin: 6px 0 0;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.buttonPrimary,
+.buttonSecondary,
+.buttonTertiary {
+  border: none;
+  border-radius: 999px;
+  min-height: 50px;
+  padding: 0 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.buttonPrimary {
+  background: #2f4f6f;
+  color: #ffffff;
+}
+
+.buttonPrimary:hover,
+.buttonPrimary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+.buttonSecondary {
+  background: #ffffff;
+  color: #2f4f6f;
+  border: 1px solid rgba(47, 79, 111, 0.18);
+}
+
+.buttonSecondary:hover,
+.buttonSecondary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+}
+
+.buttonTertiary {
+  background: transparent;
+  color: #2f4f6f;
+}
+
+.photoUploadPanel {
+  display: grid;
+  gap: 16px;
+}
+
+.photoUploadDropzone {
+  min-height: 180px;
+  border: 1px dashed rgba(80, 90, 100, 0.24);
+  border-radius: 18px;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #4a4a4a;
+  background: #fafafb;
+}
+
+.photoUploadDropzone:hover {
+  border-color: rgba(122, 31, 43, 0.4);
+}
+
+.photoUploadActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.photoButton {
+  min-width: 180px;
+  background: #ffffff;
+  border: 1px solid rgba(47, 79, 111, 0.18);
+  color: #2f4f6f;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.photoCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(80, 90, 100, 0.12);
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(30, 40, 50, 0.06);
+}
+
+.photoPreview {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.photoActions {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+}
+
+.photoActionButton {
+  flex: 1;
+  min-height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(122, 31, 43, 0.08);
+  color: #5a1520;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.photoProgress {
+  height: 6px;
+  width: 100%;
+  background: rgba(80, 90, 100, 0.12);
+}
+
+.photoProgressFill {
+  height: 100%;
+  background: #2f4f6f;
+  width: 0%;
+  transition: width 240ms ease;
+}
+
+.reviewCard {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(80, 90, 100, 0.12);
+  background: #ffffff;
+}
+
+.reviewCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewLabel {
+  color: #5a1520;
+  font-weight: 700;
+}
+
+.reviewValue {
+  color: #3f2d30;
+}
+
+.reviewRow {
+  display: grid;
+  gap: 5px;
+}
+
+.checkboxField {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #fafafb;
+  border: 1px solid rgba(80, 90, 100, 0.12);
+}
+
+.checkboxLabel {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: #4a3234;
+  font-weight: 700;
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: #7a1f2b;
+}
+
+.checkboxText {
+  color: #5b4a4b;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 10, 0.48);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+
+.modalCard {
+  width: min(96vw, 680px);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 28px;
+  border-radius: 36px;
+  background: #fff;
+  border: 1px solid rgba(122, 31, 43, 0.14);
+  box-shadow: 0 46px 90px rgba(90, 21, 32, 0.18);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #241916;
+}
+
+.modalBody {
+  display: grid;
+  gap: 18px;
+}
+
+.cropPreview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(122, 31, 43, 0.12);
+  background: #f7f3ef;
+}
+
+.cropPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cropSlider {
+  display: grid;
+  gap: 10px;
+}
+
+.cropHelp {
+  margin: 0;
+  color: #5b4a4b;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.summaryTag {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #eef2f7;
+  color: #2f4f6f;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .stepLabels {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonRow {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 760px) {
+  .stepLabels {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .pageShell {
+    padding: 24px 16px 32px;
+  }
+
+  .wizardCard {
+    padding: 22px;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary,
+  .buttonTertiary {
+    width: 100%;
+  }
+}
